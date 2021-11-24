@@ -8,7 +8,7 @@ const config: webpack.Configuration = {
 	output: {
 		filename: '[name].[contenthash].js',
 		assetModuleFilename: 'assets/[name][ext]',
-		path: path.join( __dirname, '../dist' ),
+		path: path.join( __dirname, '../docs' ),
 		clean: true
 	},
 	resolve: {
