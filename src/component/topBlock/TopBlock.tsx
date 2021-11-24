@@ -1,44 +1,67 @@
-import { Toolbar } from "@material-ui/core";
-import { createStyles, makeStyles } from "@material-ui/styles";
+import { Avatar, Box } from "@material-ui/core";
+import { makeStyles } from '@material-ui/styles';
 import React, { FC } from "react";
-import Button, { IButton } from "../buttons/Button";
 
-const useStyles = makeStyles( () =>
-	createStyles( {
-		title: {
-			width: '100%',
-			height: '180px',
-			margin: 'auto',
-			font: 'Sans-serif',
-			padding: '0px',
-			fontSize: '75px',
-			color: 'white',
-			fontFamily: 'Sans-serif'
-		},
-		block: {
-			backgroundColor: '#ff9800b3',
-			width: '100 %',
-			height: '300px',
-			font: 'inherit',
-			padding: '0px'
-		}
-	} )
+const useStyles = makeStyles( {
+	picture: {
+		width: '100 %',
+		height: '170px',
+		font: 'inherit',
+		padding: 'auto'
+	},
+	title: {
+		width: '100%',
+		height: 'auto',
+		margin: 'auto',
+		font: 'Sans-serif',
+		padding: '0px',
+		fontSize: '35px',
+		color: '#00000099',
+		fontFamily: 'Sans-serif',
+		textAlign: 'center'
+	},
+	content: {
+		width: '100%',
+		height: 'auto',
+		margin: 'auto',
+		font: 'Sans-serif',
+		padding: '0px',
+		fontSize: '15px',
+		letterSpacing: '5px',
+		color: '#00000099',
+		fontFamily: 'Sans-serif',
+		textAlign: 'center',
+	},
+	block: {
+		width: '100 %',
+		height: '300px',
+		font: 'inherit',
+		padding: '0px'
+	}
+}
 );
 
 
 const TopBlock: FC = () => {
 	const styles = useStyles();
-	const homeButton: IButton = { name: "Home" };
 	return (
-		<Toolbar className={styles.block}>
+		<Box className={styles.block}>
+			<div className={styles.picture}>
+				<Avatar
+					alt='Mug'
+					src='../../assets/image/BreakingBad.jpg'
+					sx={{ width: 150, height: 150, marginInline: 'auto' }}
+				/>
+			</div>
 			<div className={styles.title}>
 				<div>
 					JIM HUANG
 				</div>
+				<div className={styles.content}>
+					0912-540-291
+				</div>
 			</div>
-
-			<Button {...homeButton} />
-		</Toolbar>
+		</Box>
 	);
 }
 
