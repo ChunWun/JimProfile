@@ -104,4 +104,3 @@ typings/
 .tern-port
 
 package-lock.json
-dist/
