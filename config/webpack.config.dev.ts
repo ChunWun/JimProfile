@@ -6,6 +6,7 @@ import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import ESLintPlugin from 'eslint-webpack-plugin';
 import NodePolyfillPlugin from 'node-polyfill-webpack-plugin';
 import common from './webpack.config.common';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 
 const config: webpack.Configuration = webpackMerge( common, {
@@ -22,7 +23,14 @@ const config: webpack.Configuration = webpackMerge( common, {
 		new ESLintPlugin( {
 			extensions: [ 'js', 'jsx', 'ts', 'tsx' ],
 		} ),
-		new NodePolyfillPlugin()
+		new NodePolyfillPlugin(),
+		new CopyWebpackPlugin(
+			{
+				patterns: [
+					{ from: "./src/assets", to: "./assets" }
+				]
+			}
+		),
 	],
 } );
 

@@ -1,5 +1,6 @@
 import webpack from 'webpack';
 import path from 'path';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 
 const config: webpack.Configuration = {
@@ -11,6 +12,15 @@ const config: webpack.Configuration = {
 	resolve: {
 		extensions: [ '.tsx', '.ts', '.js' ],
 	},
+	plugins: [
+		new CopyWebpackPlugin(
+			{
+				patterns: [
+					{ from: "./src/assets", to: "./assets" }
+				]
+			}
+		),
+	],
 	module: {
 		rules: [
 			{
@@ -26,6 +36,10 @@ const config: webpack.Configuration = {
 						],
 					},
 				},
+			},
+			{
+				test: /\.(png|svg|jpg|jpeg|gif)$/i,
+				type: 'asset/resource'
 			},
 			{
 				test: /\.scss$/,
