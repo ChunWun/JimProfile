@@ -7,7 +7,9 @@ const config: webpack.Configuration = {
 	entry: path.join( __dirname, '../src/index.tsx' ),
 	output: {
 		filename: '[name].[contenthash].js',
+		assetModuleFilename: 'assets/[name][ext]',
 		path: path.join( __dirname, '../dist' ),
+		clean: true
 	},
 	resolve: {
 		extensions: [ '.tsx', '.ts', '.js' ],
