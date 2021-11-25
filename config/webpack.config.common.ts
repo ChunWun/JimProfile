@@ -53,6 +53,11 @@ const config: webpack.Configuration = {
 					},
 					'sass-loader'
 				]
+			},
+			{
+				test: /\.json$/,
+				loader: 'json-loader',
+				type: 'javascript/auto',
 			}
 		]
 	},

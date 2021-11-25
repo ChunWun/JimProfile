@@ -1,9 +1,11 @@
 import React, { FC } from "react"
 import { makeStyles } from "@material-ui/styles";
 import { Box } from "@material-ui/system";
+import skillText from '../../assets/text/skill.json';
 
 interface IItemBlock {
 	title: string;
+	content: string;
 }
 
 const useStyles = makeStyles( {
@@ -41,11 +43,13 @@ const useStyles = makeStyles( {
 	},
 	itemText: {
 		margin: 'auto',
-		font: 'Sans-serif',
-		padding: '0px',
-		fontSize: '20px',
-		color: 'white',
-		fontFamily: 'Sans-serif'
+		padding: '10px 0px 0px 0px',
+		fontSize: '15px',
+		color: '#627863c9',
+		fontFamily: 'Sans-serif',
+		textAlign: 'center',
+		whiteSpace: 'pre-line',
+		verticalAlign: 'bottom'
 	}
 }
 );
@@ -58,6 +62,9 @@ const ItemBlock: FC<IItemBlock> = ( props: IItemBlock ) => {
 				{props.title}
 			</h1>
 			<div className={styles.titleLine}></div>
+			<h1 className={styles.itemText}>
+				{props.content}
+			</h1>
 		</div>
 	)
 }
@@ -65,15 +72,18 @@ const ItemBlock: FC<IItemBlock> = ( props: IItemBlock ) => {
 const SkillBlock: FC = () => {
 	const styles = useStyles();
 	const codeTitle: IItemBlock = {
-		title: 'Code'
+		title: 'Code',
+		content: skillText.skillItem_1
 	}
 
 	const toolTitle: IItemBlock = {
-		title: 'Tool'
+		title: 'Tool',
+		content: skillText.skillItem_2
 	}
 
 	const artTitle: IItemBlock = {
-		title: 'Art'
+		title: 'Art',
+		content: skillText.skillItem_3
 	}
 
 	return (
