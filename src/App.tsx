@@ -1,6 +1,7 @@
 import { makeStyles } from '@material-ui/styles';
 import React, { FC } from 'react';
 import ContentArea from './component/contentArea/ContentArea';
+import SkillBlock from './component/skillBlock/SkillBlock';
 import TopBlock from './component/topBlock/TopBlock';
 import './css/style.scss'
 
@@ -21,6 +22,7 @@ const App: FC = () => {
 	return (
 		<div className={styles.app}>
 			<TopBlock />
+			<SkillBlock />
 			<ContentArea />
 		</div>
 	)
