@@ -13,7 +13,6 @@ const useStyles = makeStyles( {
 		width: '100%',
 		height: 'auto',
 		margin: 'auto',
-		font: 'Sans-serif',
 		padding: '0px',
 		fontSize: '35px',
 		color: '#00000099',
@@ -34,7 +33,7 @@ const useStyles = makeStyles( {
 	},
 	block: {
 		width: '100 %',
-		height: '300px',
+		height: '265px',
 		font: 'inherit',
 		padding: '0px'
 	}
