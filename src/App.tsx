@@ -7,12 +7,18 @@ import './css/style.scss'
 
 
 const useStyles = makeStyles( {
+	wrapper: {
+		display: 'flex',
+		justifyContent: 'center'
+	},
 	app: {
-		width: '75%',
+		width: '794px',
 		height: '75%',
 		font: 'inherit',
-		padding: '50px 10px 10px 10px',
-		margin: 'auto'
+		padding: '10px 10px 10px 10px',
+		margin: '50px 10px 50px 10px',
+		boxShadow: '0px 0px 5px 6px #cccccc',
+		justifyContent: 'space-evenly',
 	}
 }
 );
@@ -20,11 +26,14 @@ const useStyles = makeStyles( {
 const App: FC = () => {
 	const styles = useStyles();
 	return (
-		<div className={styles.app}>
-			<TopBlock />
-			<SkillBlock />
-			<ContentArea />
+		<div className={styles.wrapper}>
+			<div className={styles.app}>
+				<TopBlock />
+				<SkillBlock />
+				<ContentArea />
+			</div>
 		</div>
+
 	)
 }
 
