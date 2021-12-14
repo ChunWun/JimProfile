@@ -2,44 +2,33 @@ import React, { FC } from "react"
 import { makeStyles } from "@material-ui/styles";
 import { Box } from "@material-ui/system";
 import skillText from '../../assets/text/skill.json';
+import { Card, CardActionArea, CardContent, CardMedia, Typography } from "@material-ui/core";
 
 interface IItemBlock {
 	title: string;
 	content: string;
+	imgUrl: string;
 }
 
 const useStyles = makeStyles( {
 	block: {
 		width: '100%',
-		height: '200px',
+		height: '215px',
 		font: 'inherit',
-		padding: '0px',
+		padding: '10px 0px 10px 0px',
 		display: 'inline-flex',
 		flex: 'auto',
-		justifyContent: 'space-around'
+		justifyContent: 'center'
 	},
 	itemBlock: {
-		width: '200px',
-		height: '200px',
-		font: 'inherit',
-		padding: '0px',
+		padding: '0px 10px 10px 0px',
 		flex: 'true'
 	},
 	itemTitle: {
 		margin: 'auto',
-		font: 'Sans-serif',
 		padding: '0px',
-		fontSize: '20px',
 		color: '#767676',
-		fontFamily: 'Sans-serif',
 		textAlign: 'center'
-	},
-	titleLine: {
-		width: '70%',
-		height: '1px',
-		color: '#9e9e9e75',
-		margin: 'auto',
-		borderBottom: 'solid'
 	},
 	itemText: {
 		margin: 'auto',
@@ -54,43 +43,62 @@ const useStyles = makeStyles( {
 }
 );
 
-const ItemBlock: FC<IItemBlock> = ( props: IItemBlock ) => {
+const CardBlock: FC<IItemBlock> = ( props: IItemBlock ) => {
 	const styles = useStyles();
 	return (
-		<div className={styles.itemBlock}>
-			<h1 className={styles.itemTitle}>
-				{props.title}
-			</h1>
-			<div className={styles.titleLine}></div>
-			<h1 className={styles.itemText}>
-				{props.content}
-			</h1>
-		</div>
-	)
+		<Card >
+			<CardActionArea>
+				<CardMedia
+					component="img"
+					height="140"
+					image={props.imgUrl}
+					alt="green iguana"
+				/>
+				<CardContent>
+					<Typography gutterBottom variant="h5" component="div"
+						className={styles.itemTitle}>
+						{props.title}
+					</Typography>
+					{/* <Typography className={styles.itemText}>
+						{props.content}
+					</Typography> */}
+				</CardContent>
+			</CardActionArea>
+		</Card>
+	);
 }
 
 const SkillBlock: FC = () => {
 	const styles = useStyles();
 	const codeTitle: IItemBlock = {
 		title: 'Code',
-		content: skillText.skillItem_1
+		content: skillText.skillItem_1,
+		imgUrl: './assets/image/Code.jpg'
 	}
 
 	const toolTitle: IItemBlock = {
-		title: 'Tool',
-		content: skillText.skillItem_2
+		title: 'Tools',
+		content: skillText.skillItem_2,
+		imgUrl: './assets/image/Tools.jpg'
 	}
 
-	const artTitle: IItemBlock = {
-		title: 'Art',
-		content: skillText.skillItem_3
+	const gameTitle: IItemBlock = {
+		title: 'Game',
+		content: skillText.skillItem_3,
+		imgUrl: './assets/image/Game.jpg'
 	}
 
 	return (
 		<Box className={styles.block}>
-			<ItemBlock {...codeTitle} />
-			<ItemBlock {...toolTitle} />
-			<ItemBlock {...artTitle} />
+			<div className={styles.itemBlock}>
+				<CardBlock {...codeTitle} />
+			</div>
+			<div className={styles.itemBlock}>
+				<CardBlock {...toolTitle} />
+			</div>
+			<div className={styles.itemBlock}>
+				<CardBlock {...gameTitle} />
+			</div>
 		</Box >
 	);
 }

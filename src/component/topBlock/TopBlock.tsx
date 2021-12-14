@@ -7,6 +7,7 @@ const useStyles = makeStyles( {
 		width: '100 %',
 		height: '170px',
 		font: 'inherit',
+		margin: '10px 0px 10px 0px',
 		padding: 'auto'
 	},
 	title: {
@@ -33,8 +34,9 @@ const useStyles = makeStyles( {
 	},
 	block: {
 		width: '100 %',
-		height: '265px',
+		height: '250px',
 		font: 'inherit',
+		margin: '10px 0px 10px 0px',
 		padding: '0px'
 	}
 }
