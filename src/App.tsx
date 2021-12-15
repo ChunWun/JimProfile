@@ -13,7 +13,6 @@ const useStyles = makeStyles( {
 	},
 	app: {
 		width: '794px',
-		height: '75%',
 		font: 'inherit',
 		padding: '10px 10px 10px 10px',
 		margin: '50px 10px 50px 10px',
