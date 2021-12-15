@@ -5,7 +5,7 @@ import React, { FC } from "react";
 const useStyles = makeStyles( {
 	picture: {
 		width: '100 %',
-		height: '170px',
+		height: '160px',
 		font: 'inherit',
 		margin: '10px 0px 10px 0px',
 		padding: 'auto'

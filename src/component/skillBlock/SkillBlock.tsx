@@ -1,7 +1,7 @@
 import React, { FC } from "react"
 import { makeStyles } from "@material-ui/styles";
 import { Box } from "@material-ui/system";
-import skillText from '../../assets/text/skill.json';
+import CV from '../../assets/text/CV.json';
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from "@material-ui/core";
 
 interface IItemBlock {
@@ -72,19 +72,19 @@ const SkillBlock: FC = () => {
 	const styles = useStyles();
 	const codeTitle: IItemBlock = {
 		title: 'Code',
-		content: skillText.skillItem_1,
+		content: CV.skillItem_1,
 		imgUrl: './assets/image/Code.jpg'
 	}
 
 	const toolTitle: IItemBlock = {
 		title: 'Tools',
-		content: skillText.skillItem_2,
+		content: CV.skillItem_2,
 		imgUrl: './assets/image/Tools.jpg'
 	}
 
 	const gameTitle: IItemBlock = {
 		title: 'Game',
-		content: skillText.skillItem_3,
+		content: CV.skillItem_3,
 		imgUrl: './assets/image/Game.jpg'
 	}
 
