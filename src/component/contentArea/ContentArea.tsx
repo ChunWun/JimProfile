@@ -5,6 +5,7 @@ import CV from '../../assets/text/CV.json';
 
 interface IWorkBlock {
 	company: string;
+	title: string;
 	duration: string;
 	contents: Array<string>;
 	imgUrl?: string;
@@ -34,6 +35,12 @@ const useStyles = makeStyles( {
 		margin: 'auto',
 		fontSize: '21px',
 		color: '#00000099',
+		fontFamily: '-webkit-pictograph'
+	},
+	jobTitle: {
+		margin: 'auto',
+		fontSize: '18px',
+		color: '#000000d9',
 		fontFamily: '-webkit-pictograph'
 	},
 	content: {
@@ -69,10 +76,11 @@ const WorkBox: FC<IWorkBlock> = ( props: IWorkBlock ) => {
 					<span className={styles.subTitle}>
 						<h1 className={styles.subTitle}>
 							{props.company}
-							<span className={styles.content}>
-								{props.duration}
-							</span>
 						</h1>
+						<span className={styles.jobTitle}>
+							{props.title}
+							{props.duration}
+						</span>
 						{contentArray}
 					</span>
 				</Grid>
@@ -86,9 +94,18 @@ const ContentArea: FC = () => {
 
 	const item1: IWorkBlock = {
 		company: 'THE DOJO',
-		duration: '2019- 2021',
+		title: 'Game Engineer',
+		duration: '2019-2021',
 		contents: [ CV.workItem1_1, CV.workItem1_2, CV.workItem1_3 ],
 		imgUrl: './assets/image/Dojo.jpg'
+	}
+
+	const item2: IWorkBlock = {
+		company: '微想實驗室',
+		title: 'Game Developer',
+		duration: '2017-2019',
+		contents: [ CV.workItem1_1, CV.workItem1_2, CV.workItem1_3 ],
+		imgUrl: './assets/image/Thinkabit.jpg'
 	}
 
 	return (
@@ -97,6 +114,7 @@ const ContentArea: FC = () => {
 				Work Experience
 			</span>
 			<WorkBox {...item1} />
+			<WorkBox {...item2} />
 		</div>
 
 	);
