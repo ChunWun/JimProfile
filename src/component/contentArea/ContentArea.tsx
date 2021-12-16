@@ -79,6 +79,7 @@ const WorkBox: FC<IWorkBlock> = ( props: IWorkBlock ) => {
 						</h1>
 						<span className={styles.jobTitle}>
 							{props.title}
+							/
 							{props.duration}
 						</span>
 						{contentArray}
@@ -101,10 +102,10 @@ const ContentArea: FC = () => {
 	}
 
 	const item2: IWorkBlock = {
-		company: '微想實驗室',
+		company: '微想實驗室 Think a bit Lab',
 		title: 'Game Developer',
 		duration: '2017-2019',
-		contents: [ CV.workItem1_1, CV.workItem1_2, CV.workItem1_3 ],
+		contents: [ CV.workItem2_1, CV.workItem2_2 ],
 		imgUrl: './assets/image/Thinkabit.jpg'
 	}
 
