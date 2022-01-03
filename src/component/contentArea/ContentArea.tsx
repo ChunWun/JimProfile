@@ -6,7 +6,7 @@ import CV from '../../assets/text/CV.json';
 interface IWorkBlock {
 	company: string;
 	title: string;
-	duration: string;
+	duration?: string;
 	contents: Array<string>;
 	imgUrl?: string;
 }
@@ -17,8 +17,17 @@ const useStyles = makeStyles( {
 		font: 'inherit',
 		padding: '10px'
 	},
-	title: {
+	workTitle: {
 		backgroundColor: '#bee7ec',
+		fontSize: '30px',
+		color: '#00000099',
+		fontFamily: 'monospace',
+		display: 'flow-root',
+		textAlign: 'center'
+	},
+
+	educationTitle: {
+		backgroundColor: '#ffddbf',
 		fontSize: '30px',
 		color: '#00000099',
 		fontFamily: 'monospace',
@@ -79,7 +88,6 @@ const WorkBox: FC<IWorkBlock> = ( props: IWorkBlock ) => {
 						</h1>
 						<span className={styles.jobTitle}>
 							{props.title}
-							/
 							{props.duration}
 						</span>
 						{contentArray}
@@ -96,7 +104,7 @@ const ContentArea: FC = () => {
 	const item1: IWorkBlock = {
 		company: 'THE DOJO',
 		title: 'Game Engineer',
-		duration: '2019-2021',
+		duration: '/ 2019-2021',
 		contents: [ CV.workItem1_1, CV.workItem1_2, CV.workItem1_3 ],
 		imgUrl: './assets/image/Dojo.jpg'
 	}
@@ -104,19 +112,32 @@ const ContentArea: FC = () => {
 	const item2: IWorkBlock = {
 		company: '微想實驗室 Think a bit Lab',
 		title: 'Game Developer',
-		duration: '2017-2019',
+		duration: '/ 2017-2019',
 		contents: [ CV.workItem2_1, CV.workItem2_2 ],
 		imgUrl: './assets/image/Thinkabit.jpg'
 	}
 
+	const educationItem: IWorkBlock = {
+		company: 'National Taipei University of Education',
+		title: 'Master Program in Toy and Game Design',
+		contents: [ CV.educationItem1_1, CV.educationItem1_2 ],
+		imgUrl: './assets/image/NTUE.png'
+	}
+
 	return (
 		<div className={styles.area}>
-			<span className={styles.title}>
+			<span className={styles.workTitle}>
 				Work Experience
 			</span>
 			<WorkBox {...item1} />
 			<WorkBox {...item2} />
-		</div>
+
+			<span className={styles.educationTitle} >
+				Education
+			</span>
+			<WorkBox {...educationItem} />
+
+		</div >
 
 	);
 }
