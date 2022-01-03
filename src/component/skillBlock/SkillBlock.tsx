@@ -59,9 +59,6 @@ const CardBlock: FC<IItemBlock> = ( props: IItemBlock ) => {
 						className={styles.itemTitle}>
 						{props.title}
 					</Typography>
-					{/* <Typography className={styles.itemText}>
-						{props.content}
-					</Typography> */}
 				</CardContent>
 			</CardActionArea>
 		</Card>
