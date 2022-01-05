@@ -8,11 +8,17 @@ import './css/style.scss'
 
 
 const useStyles = makeStyles( {
+	linkWrapper: {
+		display: 'flex',
+		justifyContent: 'center'
+	},
 	wrapper: {
 		display: 'flex',
 		justifyContent: 'center'
 	},
 	link: {
+		width: '794px',
+		margin: '0px 10px 0px 10px',
 		height: '30px',
 		padding: '10px 10px 10px 10px',
 		justifyContent: 'center',
@@ -33,9 +39,12 @@ const App: FC = () => {
 	const styles = useStyles();
 	return (
 		<React.Fragment>
-			<div className={styles.link}>
-				<ContactBlock />
+			<div className={styles.linkWrapper}>
+				<div className={styles.link}>
+					<ContactBlock />
+				</div>
 			</div>
+
 			<div className={styles.wrapper}>
 				<div className={styles.paper}>
 					<TopBlock />

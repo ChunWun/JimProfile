@@ -17,17 +17,9 @@ const useStyles = makeStyles( {
 		font: 'inherit',
 		padding: '10px'
 	},
-	workTitle: {
-		backgroundColor: '#bee7ec',
-		fontSize: '30px',
-		color: '#00000099',
-		fontFamily: 'monospace',
-		display: 'flow-root',
-		textAlign: 'center'
-	},
-
-	educationTitle: {
-		backgroundColor: '#ffddbf',
+	title: {
+		// backgroundColor: '#bee7ec',
+		borderStyle: 'groove',
 		fontSize: '30px',
 		color: '#00000099',
 		fontFamily: 'monospace',
@@ -73,29 +65,44 @@ const WorkBox: FC<IWorkBlock> = ( props: IWorkBlock ) => {
 		)
 	} );
 
-	return (
-		<div className={styles.area}>
-			<Grid container spacing={2} margin={'5px 0px 5px 0px'}>
-				<Hidden mdDown>
-					<Grid item xs={2}>
-						<img src={props.imgUrl} className={styles.icon} />
-					</Grid>
-				</Hidden>
-				<Grid item xs={10} borderLeft={'outset'}>
-					<span className={styles.subTitle}>
-						<h1 className={styles.subTitle}>
-							{props.company}
-						</h1>
-						<span className={styles.jobTitle}>
-							{props.title}
-							{props.duration}
+	return ( props.imgUrl ) ?
+		(
+			<div className={styles.area}>
+				<Grid container spacing={2} margin={'5px 0px 5px 0px'}>
+					<Hidden mdDown>
+						<Grid item xs={2}>
+							<img src={props.imgUrl} className={styles.icon} />
+						</Grid>
+					</Hidden>
+					<Grid item xs={10} borderLeft={'outset'}>
+						<span className={styles.subTitle}>
+							<h1 className={styles.subTitle}>
+								{props.company}
+							</h1>
+							<span className={styles.jobTitle}>
+								{props.title}
+								{props.duration}
+							</span>
+							{contentArray}
 						</span>
-						{contentArray}
-					</span>
+					</Grid>
 				</Grid>
-			</Grid>
-		</div>
-	);
+			</div>
+		)
+		: (
+			<div className={styles.area}>
+				<span className={styles.subTitle}>
+					<h1 className={styles.subTitle}>
+						{props.company}
+					</h1>
+					<span className={styles.jobTitle}>
+						{props.title}
+						{props.duration}
+					</span>
+					{contentArray}
+				</span>
+			</div>
+		)
 }
 
 const ContentArea: FC = () => {
@@ -106,7 +113,7 @@ const ContentArea: FC = () => {
 		title: 'Game Engineer',
 		duration: '/ 2019-2021',
 		contents: [ CV.workItem1_1, CV.workItem1_2, CV.workItem1_3 ],
-		imgUrl: './assets/image/Dojo.jpg'
+		// imgUrl: './assets/image/Dojo.jpg'
 	}
 
 	const item2: IWorkBlock = {
@@ -114,25 +121,25 @@ const ContentArea: FC = () => {
 		title: 'Game Developer',
 		duration: '/ 2017-2019',
 		contents: [ CV.workItem2_1, CV.workItem2_2 ],
-		imgUrl: './assets/image/Thinkabit.jpg'
+		// imgUrl: './assets/image/Thinkabit.jpg'
 	}
 
 	const educationItem: IWorkBlock = {
 		company: 'National Taipei University of Education',
 		title: 'Master Program in Toy and Game Design',
 		contents: [ CV.educationItem1_1, CV.educationItem1_2 ],
-		imgUrl: './assets/image/NTUE.png'
+		// imgUrl: './assets/image/NTUE.png'
 	}
 
 	return (
 		<div className={styles.area}>
-			<span className={styles.workTitle}>
+			<span className={styles.title}>
 				Work Experience
 			</span>
 			<WorkBox {...item1} />
 			<WorkBox {...item2} />
 
-			<span className={styles.educationTitle} >
+			<span className={styles.title} >
 				Education
 			</span>
 			<WorkBox {...educationItem} />
