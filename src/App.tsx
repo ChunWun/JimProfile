@@ -10,20 +10,18 @@ import './css/style.scss'
 const useStyles = makeStyles( {
 	wrapper: {
 		display: 'flex',
-		justifyContent: 'center',
-		flexDirection: 'column'
+		justifyContent: 'center'
 	},
 	link: {
-		width: '70%',
 		height: '30px',
 		padding: '10px 10px 10px 10px',
-		margin: '0px 15%',
+		justifyContent: 'center',
 	},
 	paper: {
-		width: '70%',
+		width: '794px',
+		margin: '10px 10px 50px 10px',
 		font: 'inherit',
 		padding: '10px 10px 10px 10px',
-		margin: '10px 15%',
 		boxShadow: '0px 0px 5px 6px #cccccc',
 		justifyContent: 'space-evenly',
 		minWidth: '400px'
@@ -34,19 +32,18 @@ const useStyles = makeStyles( {
 const App: FC = () => {
 	const styles = useStyles();
 	return (
-		<div className={styles.wrapper}>
-
+		<React.Fragment>
 			<div className={styles.link}>
 				<ContactBlock />
 			</div>
-
-			<div className={styles.paper}>
-
-				<TopBlock />
-				<SkillBlock />
-				<ContentArea />
+			<div className={styles.wrapper}>
+				<div className={styles.paper}>
+					<TopBlock />
+					<SkillBlock />
+					<ContentArea />
+				</div>
 			</div>
-		</div>
+		</React.Fragment>
 
 	)
 }
