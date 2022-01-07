@@ -1,8 +1,8 @@
 import { makeStyles } from '@material-ui/styles';
 import React, { FC } from 'react';
-import ContactBlock from './component/contactBlock/ContactBlock';
+import LinkBlock from './component/linkBlock/LinkBlock';
 import ContentArea from './component/contentArea/ContentArea';
-import SkillBlock from './component/skillBlock/SkillBlock';
+import SkillBlockV2 from './component/skillBlock/SkillBlockV2';
 import TopBlock from './component/topBlock/TopBlock';
 import './css/style.scss'
 
@@ -41,14 +41,14 @@ const App: FC = () => {
 		<React.Fragment>
 			<div className={styles.linkWrapper}>
 				<div className={styles.link}>
-					<ContactBlock />
+					<LinkBlock />
 				</div>
 			</div>
 
 			<div className={styles.wrapper}>
 				<div className={styles.paper}>
 					<TopBlock />
-					<SkillBlock />
+					<SkillBlockV2 />
 					<ContentArea />
 				</div>
 			</div>
