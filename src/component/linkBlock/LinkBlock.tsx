@@ -22,7 +22,7 @@ const useStyles = makeStyles( {
 }
 );
 
-const ContactBlock: FC = () => {
+const LinkBlock: FC = () => {
 	const styles = useStyles();
 	return (
 		<Box className={styles.block}>
@@ -54,4 +54,4 @@ const ContactBlock: FC = () => {
 	);
 }
 
-export default ContactBlock;
+export default LinkBlock;
