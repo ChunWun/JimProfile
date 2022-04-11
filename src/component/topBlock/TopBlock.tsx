@@ -50,7 +50,7 @@ const TopBlock: FC = () => {
 			<div className={styles.picture}>
 				<Avatar
 					alt='Mug'
-					src='./assets/image/BreakingBad.jpg'
+					src='./assets/image/Jim02.jpg'
 					sx={{ width: 150, height: 150, marginInline: 'auto' }}
 				/>
 			</div>
