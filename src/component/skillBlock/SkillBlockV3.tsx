@@ -71,36 +71,36 @@ const ItemBox: FC<IItemBox> = ( props: IItemBox ) => {
 	);
 }
 
+//TODO fix relative path problem
 const SkillBlockV3: FC = () => {
 	const styles = useStyles();
 	const itemTypeScript: IItemBox = {
 		title: 'TypeScripts',
-		// here use relative path
-		iconUrl: '../../assets/image/skillBlock/TS_logo.png',
+		iconUrl: './assets/image/skillBlock/TS_logo.png',
 		content: CV.skill_TypeScripts	
 	}
 
 	const itemJavaScript: IItemBox = {
 		title: 'JavaScripts',
-		iconUrl: '../../assets/image/skillBlock/JS_logo.png',
+		iconUrl: './assets/image/skillBlock/JS_logo.png',
 		content: CV.skill_JavaScripts	
 	}
 
 	const itemPixiJs: IItemBox = {
 		title: 'PixiJs',
-		iconUrl: '../../assets/image/skillBlock/Pixi_logo.png',
+		iconUrl: './assets/image/skillBlock/Pixi_logo.png',
 		content: CV.skill_Pixi	
 	}
 
 	const itemReact: IItemBox = {
 		title: 'React',
-		iconUrl: '../../assets/image/skillBlock/React_logo.png',
+		iconUrl: './assets/image/skillBlock/React_logo.png',
 		content: CV.skill_React	
 	}
 
 	const itemHtml: IItemBox = {
 		title: 'PixiJs',
-		iconUrl: '../../assets/image/skillBlock/HTML_logo.png',
+		iconUrl: './assets/image/skillBlock/HTML_logo.png',
 		content: CV.skill_Html	
 	}
 
