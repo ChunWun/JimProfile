@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/styles';
 import React, { FC } from 'react';
 import ContactBlock from './component/contactBlock/ContactBlock';
 import ContentArea from './component/contentArea/ContentArea';
-import SkillBlock from './component/skillBlock/SkillBlock';
+import SkillBlockV3 from './component/skillBlock/SkillBlockV3';
 import TopBlock from './component/topBlock/TopBlock';
 import './css/style.scss'
 
@@ -30,8 +30,7 @@ const useStyles = makeStyles( {
 		padding: '10px 10px 10px 10px',
 		boxShadow: '0px 0px 5px 6px #cccccc',
 		justifyContent: 'space-evenly',
-		minWidth: '400px',
-		backgroundColor:'#ffebce33'
+		minWidth: '400px'
 	}
 }
 );
@@ -49,7 +48,7 @@ const App: FC = () => {
 			<div className={styles.wrapper}>
 				<div className={styles.paper}>
 					<TopBlock />
-					<SkillBlock />
+					<SkillBlockV3 />
 					<ContentArea />
 				</div>
 			</div>
