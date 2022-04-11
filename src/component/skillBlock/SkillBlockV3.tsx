@@ -33,12 +33,15 @@ const useStyles = makeStyles( {
 		height:'60px',
 		justifyContent: 'center',
 		flex:'auto',
-		margin:'0px 1px 0px 1px'
+		margin:'0px 1px 0px 1px',
+		display:'flex'
 	},
 	itemIcon: {
 		borderRadius:'5px',
+		justifyContent: 'center',
 		width: '45px',
 		height: '45px',
+		margin:'auto',
 		float:'left',
 	},
 	itemContent: {
@@ -86,19 +89,19 @@ const SkillBlockV3: FC = () => {
 	const itemPixiJs: IItemBox = {
 		title: 'PixiJs',
 		iconUrl: '../../assets/image/skillBlock/Pixi_logo.png',
-		content: CV.skill_TypeScripts	
+		content: CV.skill_Pixi	
 	}
 
 	const itemReact: IItemBox = {
 		title: 'React',
 		iconUrl: '../../assets/image/skillBlock/React_logo.png',
-		content: CV.skill_TypeScripts	
+		content: CV.skill_React	
 	}
 
 	const itemHtml: IItemBox = {
 		title: 'PixiJs',
 		iconUrl: '../../assets/image/skillBlock/HTML_logo.png',
-		content: CV.skill_TypeScripts	
+		content: CV.skill_Html	
 	}
 
 	return (
