@@ -30,7 +30,8 @@ const useStyles = makeStyles( {
 		padding: '10px 10px 10px 10px',
 		boxShadow: '0px 0px 5px 6px #cccccc',
 		justifyContent: 'space-evenly',
-		minWidth: '400px'
+		minWidth: '400px',
+		backgroundColor:'#ffebce33'
 	}
 }
 );
