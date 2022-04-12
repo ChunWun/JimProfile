@@ -1,8 +1,9 @@
 import { Avatar, Box } from "@material-ui/core";
 import { makeStyles } from '@material-ui/styles';
 import React, { FC } from "react";
+import CV from "../../assets/text/CV.json"
 
-const useStyles = makeStyles( {
+const useStyles = makeStyles({
 	picture: {
 		width: '100 %',
 		height: '160px',
@@ -32,9 +33,21 @@ const useStyles = makeStyles( {
 		fontFamily: 'Sans-serif',
 		textAlign: 'center',
 	},
+	brief: {
+		width: '95%',
+		height: 'auto',
+		fontSize: '13px',
+		color: '#00000099',
+		fontFamily: 'Sans-serif',
+		textAlign: 'left',
+		margin: '10px 0px 10px 0px',
+		padding: '10px 20px 10px 20px',
+		flex: 'auto',
+		whiteSpace: 'break-spaces'
+	},
 	block: {
 		width: '100 %',
-		height: '250px',
+		height: 'auto',
 		font: 'inherit',
 		margin: '10px 0px 10px 0px',
 		padding: '0px'
@@ -61,6 +74,11 @@ const TopBlock: FC = () => {
 				<div className={styles.content}>
 					0912-540-291
 				</div>
+			</div>
+			<div className={styles.brief}>
+				<p>
+					{CV.brief}
+				</p>
 			</div>
 		</Box>
 	);
