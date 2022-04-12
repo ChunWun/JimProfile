@@ -34,18 +34,20 @@ const useStyles = makeStyles({
 		textAlign: 'center',
 	},
 	brief: {
-		width: '100%',
+		width: '95%',
 		height: 'auto',
-		margin: '20px 0px 20px 0px',
-		padding: '0px',
 		fontSize: '13px',
 		color: '#00000099',
 		fontFamily: 'Sans-serif',
-		textAlign: 'center',
+		textAlign: 'left',
+		margin: '10px 0px 10px 0px',
+		padding: '10px 20px 10px 20px',
+		flex: 'auto',
+		whiteSpace: 'break-spaces'
 	},
 	block: {
 		width: '100 %',
-		height: '350px',
+		height: 'auto',
 		font: 'inherit',
 		margin: '10px 0px 10px 0px',
 		padding: '0px'
@@ -73,8 +75,8 @@ const TopBlock: FC = () => {
 					0912-540-291
 				</div>
 			</div>
-			<div>
-				<p className={styles.brief}>
+			<div className={styles.brief}>
+				<p>
 					{CV.brief}
 				</p>
 			</div>
