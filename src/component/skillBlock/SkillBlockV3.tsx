@@ -5,11 +5,11 @@ import CV from '../../assets/text/CV.json';
 
 interface IItemBox {
 	title: string;
-	iconUrl:string;
+	iconUrl: string;
 	content: string;
 }
 
-const useStyles = makeStyles( {
+const useStyles = makeStyles({
 	block: {
 		width: '95%',
 		height: '215px',
@@ -20,32 +20,32 @@ const useStyles = makeStyles( {
 		justifyContent: 'space-between'
 	},
 	rightBlock: {
-		margin:'0px 0px 0px 10px'
+		margin: '0px 0px 0px 10px'
 	},
 	breakLine: {
 		width: '1px',
-		height:'170px',
-		backgroundColor:'black',
+		height: '170px',
+		backgroundColor: 'black',
 		justifyContent: 'center'
 	},
 	itemBox: {
 		width: '365px',
-		height:'60px',
+		height: '60px',
 		justifyContent: 'center',
-		flex:'auto',
-		margin:'0px 1px 0px 1px',
-		display:'flex'
+		flex: 'auto',
+		margin: '0px 1px 0px 1px',
+		display: 'flex'
 	},
 	itemIcon: {
-		borderRadius:'5px',
+		borderRadius: '5px',
 		justifyContent: 'center',
 		width: '45px',
 		height: '45px',
-		margin:'auto',
-		float:'left',
+		margin: 'auto',
+		float: 'left',
 	},
 	itemContent: {
-		width:'300px',
+		width: '300px',
 		margin: 'auto',
 		padding: '0px 10px 0px 10px',
 		fontSize: '14px',
@@ -54,16 +54,16 @@ const useStyles = makeStyles( {
 		textAlign: 'left',
 		whiteSpace: 'pre-line',
 		verticalAlign: 'bottom',
-		float:'left',
+		float: 'left',
 	}
 }
 );
 
-const ItemBox: FC<IItemBox> = ( props: IItemBox ) => {
+const ItemBox: FC<IItemBox> = (props: IItemBox) => {
 	const styles = useStyles();
 	return (
 		<div className={styles.itemBox}>
-			<img className={styles.itemIcon} src = {props.iconUrl} alt='icon'></img>
+			<img className={styles.itemIcon} src={props.iconUrl} alt='icon'></img>
 			<p className={styles.itemContent}>
 				{props.content}
 			</p>
@@ -77,31 +77,31 @@ const SkillBlockV3: FC = () => {
 	const itemTypeScript: IItemBox = {
 		title: 'TypeScripts',
 		iconUrl: './assets/image/skillBlock/TS_logo.png',
-		content: CV.skill_TypeScripts	
+		content: CV.skill_TypeScripts
 	}
 
 	const itemJavaScript: IItemBox = {
 		title: 'JavaScripts',
 		iconUrl: './assets/image/skillBlock/JS_logo.png',
-		content: CV.skill_JavaScripts	
+		content: CV.skill_JavaScripts
 	}
 
 	const itemPixiJs: IItemBox = {
 		title: 'PixiJs',
 		iconUrl: './assets/image/skillBlock/Pixi_logo.png',
-		content: CV.skill_Pixi	
+		content: CV.skill_Pixi
 	}
 
 	const itemReact: IItemBox = {
 		title: 'React',
 		iconUrl: './assets/image/skillBlock/React_logo.png',
-		content: CV.skill_React	
+		content: CV.skill_React
 	}
 
 	const itemHtml: IItemBox = {
 		title: 'PixiJs',
 		iconUrl: './assets/image/skillBlock/HTML_logo.png',
-		content: CV.skill_Html	
+		content: CV.skill_Html
 	}
 
 	return (
@@ -110,12 +110,12 @@ const SkillBlockV3: FC = () => {
 				<ItemBox {...itemTypeScript} />
 				<ItemBox {...itemJavaScript} />
 				<ItemBox {...itemPixiJs} />
-			</div>	
-			<div className={styles.breakLine}></div>		
+			</div>
+			<div className={styles.breakLine}></div>
 			<div className={styles.rightBlock}>
 				<ItemBox {...itemReact} />
 				<ItemBox {...itemHtml} />
-			</div>	
+			</div>
 		</Box >
 	);
 }
