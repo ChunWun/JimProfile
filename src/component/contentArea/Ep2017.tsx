@@ -1,4 +1,4 @@
-import { Box } from "@material-ui/core";
+import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import React, { FC } from "react";
 import { IExperienceImage } from "./ExperienceArea";
@@ -21,10 +21,21 @@ const useStyles = makeStyles( {
 		maxWidth: '160px',
 		margin: '10px'
 	},
-
+	card: {
+		width: '100%',
+		display: 'flex',
+		flex: 'auto',
+		justifyContent: 'space-evenly'
+	},
+	cardContent: {
+		height: '90px',
+		width: '100%',
+		display: 'flex',
+		flex: 'auto',
+	},
 	content: {
 		width: '95%',
-		margin: 'auto',
+		margin: '10px',
 		padding: '0px 10px 0px 10px',
 		fontSize: '14px',
 		color: '#627863c9',
@@ -33,7 +44,7 @@ const useStyles = makeStyles( {
 		whiteSpace: 'break-spaces',
 		verticalAlign: 'bottom',
 		float: 'left',
-	}
+	},
 } )
 
 const Ep2017: FC = () => {
@@ -50,6 +61,11 @@ const Ep2017: FC = () => {
 		url: './assets/image/theWanderers/theWanderers_2.png'
 	}
 
+	const imageAnimals: IExperienceImage = {
+		title: 'animals',
+		url: './assets/image/animals.png'
+	}
+
 	return (
 		<div>
 			<div className={styles.center}>
@@ -58,13 +74,50 @@ const Ep2017: FC = () => {
 					{CV.think_a_bit_exp}
 				</p>
 			</div>
-			<Box>
-				{/* <img src={imageWanderers.url} alt='the_wanderers'></img> */}
-			</Box>
-			< div className={styles.content}>
-				{/* This is my first project built by Unity3D. The Wanderers is an educational Augmented Reality app, */}
-			</div >
-		</div>
+			<div className={styles.card}>
+				<Card sx={{ maxWidth: 315 }}>
+					<CardMedia
+						component="img"
+						alt="green iguana"
+						height="140"
+						image={imageWanderers.url}
+					/>
+					<CardContent>
+						<Typography gutterBottom variant="h5" component="div">
+							The Wanderers
+						</Typography>
+						<Typography variant="body2" color="text.secondary" className={styles.cardContent} >
+							{CV.the_wanderers_intro}
+						</Typography>
+					</CardContent>
+					<CardActions>
+						<Button size="small" href='https://www.youtube.com/watch?v=vnlzJGAoJkw' target="_blank" >Demo Video</Button>
+					</CardActions>
+				</Card>
+				<Card sx={{ maxWidth: 315 }}>
+					<CardMedia
+						component="img"
+						alt="green iguana"
+						height="140"
+						image={imageAnimals.url}
+					/>
+					<CardContent>
+						<Typography gutterBottom variant="h5" component="div">
+							Feeding VR
+						</Typography>
+						<Typography variant="body2" color="text.secondary" className={styles.cardContent} >
+							{CV.animals_intro}
+						</Typography>
+					</CardContent>
+					<CardActions >
+						<Button size="small" href='https://www.youtube.com/watch?v=SanTHATk_8s' target="_blank">Demo Video</Button>
+					</CardActions>
+				</Card>
+
+
+			</div>
+
+		</div >
 
 	)
 }
