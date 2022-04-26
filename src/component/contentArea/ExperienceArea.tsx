@@ -96,7 +96,7 @@ const useStyles = makeStyles( {
 
 const ExperienceArea: FC = () => {
 	const styles = useStyles();
-	const defaultValueYear = 2021;
+	const defaultValueYear = 2017;
 	const [ value, setValue ] = React.useState<number>( defaultValueYear );
 
 	const onChangeYear = ( event: Event, newValue: number | number[] ) => {
