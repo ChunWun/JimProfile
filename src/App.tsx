@@ -1,13 +1,13 @@
 import { makeStyles } from '@material-ui/styles';
 import React, { FC } from 'react';
 import ContactBlock from './component/contactBlock/ContactBlock';
-import ContentArea from './component/contentArea/ContentArea';
+import ExperienceArea from './component/contentArea/ExperienceArea';
 import SkillBlockV3 from './component/skillBlock/SkillBlockV3';
 import TopBlock from './component/topBlock/TopBlock';
 import './css/style.scss'
 
 
-const useStyles = makeStyles( {
+const useStyles = makeStyles({
 	linkWrapper: {
 		display: 'flex',
 		justifyContent: 'center'
@@ -49,7 +49,7 @@ const App: FC = () => {
 				<div className={styles.paper}>
 					<TopBlock />
 					<SkillBlockV3 />
-					<ContentArea />
+					<ExperienceArea />
 				</div>
 			</div>
 		</React.Fragment>
