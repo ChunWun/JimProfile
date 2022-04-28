@@ -1,4 +1,4 @@
-import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@material-ui/core";
+import { Button, Card, CardActions, CardContent, CardMedia, Typography, Avatar, Stack } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import React, { FC } from "react";
 import { IExperienceImage } from "./ExperienceArea";
@@ -25,10 +25,11 @@ const useStyles = makeStyles({
 		width: '100%',
 		display: 'flex',
 		flex: 'auto',
-		justifyContent: 'space-evenly'
+		justifyContent: 'space-evenly',
+		margin: '10px'
 	},
 	cardContent: {
-		height: '90px',
+		height: '70px',
 		width: '100%',
 		display: 'flex',
 		flex: 'auto',
@@ -52,7 +53,7 @@ const Ep2018: FC = () => {
 	const styles = useStyles();
 
 	const imageOdonto: IExperienceImage = {
-		title: 'chariot',
+		title: 'odonto',
 		url: './assets/image/odonto/Odonto.png'
 	}
 
@@ -61,14 +62,52 @@ const Ep2018: FC = () => {
 		url: './assets/image/chariot/cover.png'
 	}
 
-	const imageAnimals: IExperienceImage = {
-		title: 'animals',
-		url: './assets/image/animals.png'
+	const imageAtomic: IExperienceImage = {
+		title: 'atomic',
+		url: './assets/image/atomic/atomic.png'
+	}
+
+	const imageTime: IExperienceImage = {
+		title: 'time',
+		url: './assets/image/time/time.png'
 	}
 
 	return (
 		<div>
+
 			<div className={styles.center}>
+				<Stack direction="row" spacing={2} margin="10px">
+					<Avatar
+						alt="unity"
+						src="./assets/image/Unity.png"
+						sx={{ width: 40, height: 40 }}
+						variant="square"
+					/>
+					<Avatar
+						alt="3dmax"
+						src="./assets/image/3Dmax.png"
+						sx={{ width: 40, height: 40 }}
+						variant="square"
+					/>
+					<Avatar
+						alt="Csharp"
+						src="./assets/image/Csharp.png"
+						sx={{ width: 40, height: 40 }}
+						variant="square"
+					/>
+					<Avatar
+						alt="AI"
+						src="./assets/image/AI.png"
+						sx={{ width: 40, height: 40 }}
+						variant="square"
+					/>
+					<Avatar
+						alt="PS"
+						src="./assets/image/PS.png"
+						sx={{ width: 40, height: 40 }}
+						variant="square"
+					/>
+				</Stack>
 				<p className={styles.content}>
 					{CV.think_a_bit_exp_2}
 				</p>
@@ -78,7 +117,7 @@ const Ep2018: FC = () => {
 					<CardMedia
 						component="img"
 						alt="green iguana"
-						height="140"
+						height="130"
 						image={imageOdonto.url}
 					/>
 					<CardContent>
@@ -86,7 +125,7 @@ const Ep2018: FC = () => {
 							Odonto VR
 						</Typography>
 						<Typography variant="body2" color="text.secondary" className={styles.cardContent} >
-							{CV.the_wanderers_intro}
+							{CV.odonto_intro}
 						</Typography>
 					</CardContent>
 					<CardActions>
@@ -97,7 +136,7 @@ const Ep2018: FC = () => {
 					<CardMedia
 						component="img"
 						alt="green iguana"
-						height="140"
+						height="130"
 						image={imageChariot.url}
 					/>
 					<CardContent>
@@ -105,7 +144,7 @@ const Ep2018: FC = () => {
 							Horse Chariot
 						</Typography>
 						<Typography variant="body2" color="text.secondary" className={styles.cardContent} >
-							{CV.the_wanderers_intro}
+							{CV.chariot_intro}
 						</Typography>
 					</CardContent>
 					<CardActions>
@@ -115,7 +154,7 @@ const Ep2018: FC = () => {
 			</div>
 
 			<div className={styles.center}>
-				<p className={styles.content}>
+				<p className={styles.content} >
 					{CV.think_a_bit_exp_3}
 				</p>
 			</div>
@@ -126,11 +165,30 @@ const Ep2018: FC = () => {
 						component="img"
 						alt="green iguana"
 						height="140"
-						image={imageAnimals.url}
+						image={imageAtomic.url}
 					/>
 					<CardContent>
 						<Typography gutterBottom variant="h5" component="div">
-							Feeding VR
+							Atomic
+						</Typography>
+						<Typography variant="body2" color="text.secondary" className={styles.cardContent} >
+							{CV.animals_intro}
+						</Typography>
+					</CardContent>
+					<CardActions >
+						<Button size="small" href='https://www.youtube.com/watch?v=SanTHATk_8s' target="_blank">Demo Video</Button>
+					</CardActions>
+				</Card>
+				<Card sx={{ maxWidth: 315 }}>
+					<CardMedia
+						component="img"
+						alt="green iguana"
+						height="140"
+						image={imageTime.url}
+					/>
+					<CardContent>
+						<Typography gutterBottom variant="h5" component="div">
+							The Time Zone
 						</Typography>
 						<Typography variant="body2" color="text.secondary" className={styles.cardContent} >
 							{CV.animals_intro}
