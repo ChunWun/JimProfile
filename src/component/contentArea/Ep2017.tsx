@@ -5,7 +5,7 @@ import { IExperienceImage } from "./ExperienceArea";
 import CV from '../../assets/text/CV.json';
 
 
-const useStyles = makeStyles( {
+const useStyles = makeStyles({
 
 	center: {
 		display: 'flex',
@@ -45,7 +45,7 @@ const useStyles = makeStyles( {
 		verticalAlign: 'bottom',
 		float: 'left',
 	},
-} )
+})
 
 const Ep2017: FC = () => {
 
@@ -70,6 +70,7 @@ const Ep2017: FC = () => {
 		<div>
 			<div className={styles.center}>
 				<img className={styles.img_thinkabit} src={imageThinkaBit.url} alt='think a bit'></img>
+				<p> 2017.01 - 2019.01 </p>
 				<p className={styles.content}>
 					{CV.think_a_bit_exp}
 				</p>
