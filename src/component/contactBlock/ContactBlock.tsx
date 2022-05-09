@@ -12,7 +12,7 @@ const useStyles = makeStyles( {
 	},
 	block: {
 		width: '100%',
-		height: '30px',
+		height: '40px',
 		font: 'inherit',
 		padding: '0px',
 		display: 'flex',
