@@ -9,7 +9,7 @@ interface IItemBox {
 	content: string;
 }
 
-const useStyles = makeStyles({
+const useStyles = makeStyles( {
 	block: {
 		width: '95%',
 		height: '215px',
@@ -17,16 +17,34 @@ const useStyles = makeStyles({
 		padding: '10px 20px 10px 20px',
 		display: 'inline-flex',
 		flex: 'auto',
-		justifyContent: 'space-between'
+		justifyContent: 'space-between',
+		'@media  (max-width:780px)': {
+			display: 'table',
+			justifyContent: 'center'
+		}
+	},
+	leftBlock: {
+		'@media  (max-width:780px)': {
+			display: 'grid',
+			justifyContent: 'center'
+		}
 	},
 	rightBlock: {
-		margin: '0px 0px 0px 10px'
+		margin: '0px 0px 0px 10px',
+		'@media  (max-width:780px)': {
+			margin: '0px',
+			display: 'grid',
+			justifyContent: 'center'
+		}
 	},
 	breakLine: {
 		width: '1px',
 		height: '170px',
 		backgroundColor: 'black',
-		justifyContent: 'center'
+		justifyContent: 'center',
+		'@media  (max-width:780px)': {
+			display: 'none'
+		}
 	},
 	itemBox: {
 		width: '365px',
@@ -59,7 +77,7 @@ const useStyles = makeStyles({
 }
 );
 
-const ItemBox: FC<IItemBox> = (props: IItemBox) => {
+const ItemBox: FC<IItemBox> = ( props: IItemBox ) => {
 	const styles = useStyles();
 	return (
 		<div className={styles.itemBox}>
@@ -106,7 +124,7 @@ const SkillBlockV3: FC = () => {
 
 	return (
 		<Box className={styles.block}>
-			<div>
+			<div className={styles.leftBlock}>
 				<ItemBox {...itemTypeScript} />
 				<ItemBox {...itemJavaScript} />
 				<ItemBox {...itemPixiJs} />
