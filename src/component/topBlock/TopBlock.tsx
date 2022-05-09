@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/styles';
 import React, { FC } from "react";
 import CV from "../../assets/text/CV.json"
 
-const useStyles = makeStyles({
+const useStyles = makeStyles( {
 	picture: {
 		width: '100 %',
 		height: '160px',
@@ -34,7 +34,6 @@ const useStyles = makeStyles({
 		textAlign: 'center',
 	},
 	brief: {
-		width: '95%',
 		height: 'auto',
 		fontSize: '13px',
 		color: '#00000099',
@@ -42,6 +41,7 @@ const useStyles = makeStyles({
 		textAlign: 'left',
 		margin: '10px 0px 10px 0px',
 		padding: '10px 20px 10px 20px',
+		display: 'flex',
 		flex: 'auto',
 		whiteSpace: 'break-spaces'
 	},

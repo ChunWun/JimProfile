@@ -7,7 +7,7 @@ import TopBlock from './component/topBlock/TopBlock';
 import './css/style.scss'
 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles( {
 	linkWrapper: {
 		display: 'flex',
 		justifyContent: 'center'
@@ -22,6 +22,11 @@ const useStyles = makeStyles({
 		height: '30px',
 		padding: '10px 10px 10px 10px',
 		justifyContent: 'center',
+		'@media  (max-width:780px)': {
+			backgroundColor: '#100f0f1c',
+			margin: '0px',
+			width: '100%'
+		}
 	},
 	paper: {
 		width: '794px',
@@ -30,7 +35,10 @@ const useStyles = makeStyles({
 		padding: '10px 10px 10px 10px',
 		boxShadow: '0px 0px 5px 6px #cccccc',
 		justifyContent: 'space-evenly',
-		minWidth: '400px'
+		'@media  (max-width:780px)': {
+			boxShadow: 'none',
+			width: '100%'
+		}
 	}
 }
 );

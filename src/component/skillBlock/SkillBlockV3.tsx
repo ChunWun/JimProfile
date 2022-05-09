@@ -9,7 +9,7 @@ interface IItemBox {
 	content: string;
 }
 
-const useStyles = makeStyles({
+const useStyles = makeStyles( {
 	block: {
 		width: '95%',
 		height: '215px',
@@ -17,16 +17,35 @@ const useStyles = makeStyles({
 		padding: '10px 20px 10px 20px',
 		display: 'inline-flex',
 		flex: 'auto',
-		justifyContent: 'space-between'
+		justifyContent: 'space-between',
+		'@media  (max-width:780px)': {
+			display: 'table',
+			justifyContent: 'center',
+			padding: '0px 5px 0px 5px'
+		}
+	},
+	leftBlock: {
+		'@media  (max-width:780px)': {
+			display: 'grid',
+			justifyContent: 'center'
+		}
 	},
 	rightBlock: {
-		margin: '0px 0px 0px 10px'
+		margin: '0px 0px 0px 10px',
+		'@media  (max-width:780px)': {
+			margin: '0px',
+			display: 'grid',
+			justifyContent: 'center'
+		}
 	},
 	breakLine: {
 		width: '1px',
 		height: '170px',
 		backgroundColor: 'black',
-		justifyContent: 'center'
+		justifyContent: 'center',
+		'@media  (max-width:780px)': {
+			display: 'none'
+		}
 	},
 	itemBox: {
 		width: '365px',
@@ -34,7 +53,10 @@ const useStyles = makeStyles({
 		justifyContent: 'center',
 		flex: 'auto',
 		margin: '0px 1px 0px 1px',
-		display: 'flex'
+		display: 'flex',
+		'@media  (max-width:400px)': {
+			width: '100%',
+		}
 	},
 	itemIcon: {
 		borderRadius: '5px',
@@ -55,11 +77,15 @@ const useStyles = makeStyles({
 		whiteSpace: 'pre-line',
 		verticalAlign: 'bottom',
 		float: 'left',
+		'@media  (max-width:400px)': {
+			width: '100%',
+			fontSize: '12px',
+		}
 	}
 }
 );
 
-const ItemBox: FC<IItemBox> = (props: IItemBox) => {
+const ItemBox: FC<IItemBox> = ( props: IItemBox ) => {
 	const styles = useStyles();
 	return (
 		<div className={styles.itemBox}>
@@ -106,7 +132,7 @@ const SkillBlockV3: FC = () => {
 
 	return (
 		<Box className={styles.block}>
-			<div>
+			<div className={styles.leftBlock}>
 				<ItemBox {...itemTypeScript} />
 				<ItemBox {...itemJavaScript} />
 				<ItemBox {...itemPixiJs} />
