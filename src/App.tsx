@@ -24,7 +24,8 @@ const useStyles = makeStyles( {
 		justifyContent: 'center',
 		'@media  (max-width:780px)': {
 			backgroundColor: '#100f0f1c',
-			margin: '0px'
+			margin: '0px',
+			width: '100%'
 		}
 	},
 	paper: {
@@ -34,9 +35,9 @@ const useStyles = makeStyles( {
 		padding: '10px 10px 10px 10px',
 		boxShadow: '0px 0px 5px 6px #cccccc',
 		justifyContent: 'space-evenly',
-		minWidth: '400px',
 		'@media  (max-width:780px)': {
 			boxShadow: 'none',
+			width: '100%'
 		}
 	}
 }

@@ -20,7 +20,8 @@ const useStyles = makeStyles( {
 		justifyContent: 'space-between',
 		'@media  (max-width:780px)': {
 			display: 'table',
-			justifyContent: 'center'
+			justifyContent: 'center',
+			padding: '0px 5px 0px 5px'
 		}
 	},
 	leftBlock: {
@@ -52,7 +53,10 @@ const useStyles = makeStyles( {
 		justifyContent: 'center',
 		flex: 'auto',
 		margin: '0px 1px 0px 1px',
-		display: 'flex'
+		display: 'flex',
+		'@media  (max-width:400px)': {
+			width: '100%',
+		}
 	},
 	itemIcon: {
 		borderRadius: '5px',
@@ -73,6 +77,10 @@ const useStyles = makeStyles( {
 		whiteSpace: 'pre-line',
 		verticalAlign: 'bottom',
 		float: 'left',
+		'@media  (max-width:400px)': {
+			width: '100%',
+			fontSize: '12px',
+		}
 	}
 }
 );

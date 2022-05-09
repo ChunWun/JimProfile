@@ -5,7 +5,7 @@ import { IExperienceImage } from "./ExperienceArea";
 import CV from '../../assets/text/CV.json';
 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles( {
 
 	center: {
 		display: 'flex',
@@ -21,12 +21,20 @@ const useStyles = makeStyles({
 		maxWidth: '160px',
 		margin: '10px'
 	},
-	card: {
+	cardBlock: {
 		width: '100%',
 		display: 'flex',
 		flex: 'auto',
 		justifyContent: 'space-evenly',
-		margin: '10px'
+		'@media  (max-width:620px)': {
+			display: 'grid',
+			justifyContent: 'center',
+		}
+	},
+	card: {
+		'@media  (max-width:620px)': {
+			margin: '5px'
+		}
 	},
 	cardContent: {
 		height: '70px',
@@ -46,7 +54,7 @@ const useStyles = makeStyles({
 		verticalAlign: 'bottom',
 		float: 'left',
 	},
-})
+} )
 
 const Ep2018: FC = () => {
 
@@ -112,8 +120,8 @@ const Ep2018: FC = () => {
 					{CV.think_a_bit_exp_2}
 				</p>
 			</div>
-			<div className={styles.card}>
-				<Card sx={{ maxWidth: 315 }}>
+			<div className={styles.cardBlock}>
+				<Card sx={{ maxWidth: 315 }} className={styles.card}>
 					<CardMedia
 						component="img"
 						alt="green iguana"
@@ -132,7 +140,7 @@ const Ep2018: FC = () => {
 						<Button size="small" href='https://www.youtube.com/watch?v=mscAeTDt7i4' target="_blank" >Demo Video</Button>
 					</CardActions>
 				</Card>
-				<Card sx={{ maxWidth: 315 }}>
+				<Card sx={{ maxWidth: 315 }} className={styles.card}>
 					<CardMedia
 						component="img"
 						alt="green iguana"
@@ -159,8 +167,8 @@ const Ep2018: FC = () => {
 				</p>
 			</div>
 
-			<div className={styles.card}>
-				<Card sx={{ maxWidth: 315 }}>
+			<div className={styles.cardBlock}>
+				<Card sx={{ maxWidth: 315 }} className={styles.card}>
 					<CardMedia
 						component="img"
 						alt="green iguana"
@@ -179,7 +187,7 @@ const Ep2018: FC = () => {
 						<Button size="small" href='https://www.youtube.com/watch?v=SanTHATk_8s' target="_blank">Demo Video</Button>
 					</CardActions>
 				</Card>
-				<Card sx={{ maxWidth: 315 }}>
+				<Card sx={{ maxWidth: 315 }} className={styles.card}>
 					<CardMedia
 						component="img"
 						alt="green iguana"
