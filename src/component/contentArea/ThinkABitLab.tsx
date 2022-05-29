@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/styles";
 import React, { FC } from "react";
 import { IExperienceImage } from "./ExperienceArea";
 import CV from '../../assets/text/CV.json';
+import ThinkABitLab2 from "./ThinkABitLab2";
 
 
 const useStyles = makeStyles( {
@@ -56,7 +57,7 @@ const useStyles = makeStyles( {
 	},
 } )
 
-const Ep2017: FC = () => {
+const ThinkABitLab: FC = () => {
 
 	const styles = useStyles();
 
@@ -126,10 +127,13 @@ const Ep2017: FC = () => {
 
 
 			</div>
+			<div>
+				<ThinkABitLab2 />
+			</div>
 
 		</div >
 
 	)
 }
 
-export default Ep2017;
+export default ThinkABitLab;

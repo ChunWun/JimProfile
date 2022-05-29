@@ -56,7 +56,7 @@ const useStyles = makeStyles( {
 	},
 } )
 
-const Ep2018: FC = () => {
+const ThinkABitLab2: FC = () => {
 
 	const styles = useStyles();
 
@@ -213,4 +213,4 @@ const Ep2018: FC = () => {
 	)
 }
 
-export default Ep2018;
+export default ThinkABitLab2;

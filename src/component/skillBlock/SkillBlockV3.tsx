@@ -125,7 +125,7 @@ const SkillBlockV3: FC = () => {
 	}
 
 	const itemHtml: IItemBox = {
-		title: 'PixiJs',
+		title: 'html',
 		iconUrl: './assets/image/skillBlock/HTML_logo.png',
 		content: CV.skill_Html
 	}
