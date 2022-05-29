@@ -1,3 +1,4 @@
+import { Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import React, { FC, useState } from "react";
 import Now from "./Now";
@@ -83,7 +84,7 @@ const useStyles = makeStyles({
 		color: '#000000d9',
 		fontFamily: '-webkit-pictograph'
 	},
-	content: {
+	jobButton: {
 		margin: '10px',
 		fontSize: '18px',
 		color: '#00000099',
@@ -91,7 +92,27 @@ const useStyles = makeStyles({
 		whiteSpace: 'pre-line',
 		lineHeight: '2',
 		justifyContent: 'center',
-		display: 'flex'
+		display: 'flex',
+		'@media  (max-width:620px)': {
+			display: 'none',
+		}
+	},
+	selectDiv: {
+		display: 'flex',
+		justifyContent: 'center'
+	},
+	jobSelect: {
+		display: 'none',
+		'@media  (max-width:620px)': {
+			fontSize: '20px',
+			color: '#00000099',
+			fontFamily: 'monospace',
+			display: 'flex',
+			margin: '10px',
+			lineHeight: '2',
+			textAlign: 'center',
+			justifyContent: 'center'
+		}
 	},
 	sliderBox: {
 		width: '100%',
@@ -120,14 +141,24 @@ const ExperienceArea: FC = () => {
 		setExperience(event.target.value);
 	};
 
-	return (
+	const onSelectJobHandler = (event: any) => {
+		setExperience(event.target.id);
+	}
 
+	return (
 		<div className={styles.area}>
 			<span className={styles.title}>
 				My Experience
 			</span>
-			<div className={styles.content}>
-				<select name="selectJob" onChange={onSelectJob} value={job}>
+			<div className={styles.jobButton}>
+				<Button id="ThinkABit" onClick={onSelectJobHandler} >Think a Bit Lab</Button>
+				<Button id="TheDojo" onClick={onSelectJobHandler} >The Dojo</Button>
+				<Button id="Now" onClick={onSelectJobHandler} >Now</Button>
+
+			</div>
+
+			<div className={styles.selectDiv}>
+				<select className={styles.jobSelect} name="selectJob" onChange={onSelectJob} value={job}>
 					<option value={'ThinkABit'}>Think a Bit Lab</option>
 					<option value={'TheDojo'}>The Dojo</option>
 					<option value={'Now'}>Now</option>
