@@ -58,8 +58,7 @@ const Now: FC = () => {
     return (
         <div>
             <div className={styles.center}>
-                <img className={styles.img_dojo} src={imageDOJO.url} alt='theDojo'></img>
-                <p> 2019.09 - 2022.03 </p>
+                <p> 2022.03 -  </p>
                 <p className={styles.content}>
                     {CV.the_dojo_exp}
                 </p>

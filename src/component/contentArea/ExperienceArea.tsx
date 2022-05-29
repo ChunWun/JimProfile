@@ -1,10 +1,8 @@
-import Box from '@mui/material/Box';
 import { makeStyles } from "@material-ui/styles";
 import React, { FC, useState } from "react";
 import Now from "./Now";
 import TheDojo from "./TheDojo";
 import ThinkABitLab from "./ThinkABitLab";
-import ThinkABitLab2 from "./ThinkABitLab2";
 
 
 export interface IExperienceImage {
@@ -128,32 +126,14 @@ const ExperienceArea: FC = () => {
 			<span className={styles.title}>
 				My Experience
 			</span>
-			<p className={styles.content}>
-				(switch job experience)
-			</p>
-			<select name="selectJob" onChange={onSelectJob} value={job}>
-				<option value={'ThinkABit'}>Think a Bit Lab</option>
-				<option value={'TheDojo'}>The Dojo</option>
-				<option value={'Now'}>Now</option>
-			</select>
-
-			{/* <div>
-				<Slider
-					aria-label="Year"
-					defaultValue={defaultValueYear}
-					getAriaValueText={valuetext}
-					valueLabelDisplay="auto"
-					step={1}
-					marks={YearMarks}
-					color="primary"
-					onChange={onChangeYear}
-					min={2017}
-					max={2022}
-				/>
-			</div> */}
-			<div >
-				{/* {yearsMap.get(value)} */}
-				{console.log(job)}
+			<div className={styles.content}>
+				<select name="selectJob" onChange={onSelectJob} value={job}>
+					<option value={'ThinkABit'}>Think a Bit Lab</option>
+					<option value={'TheDojo'}>The Dojo</option>
+					<option value={'Now'}>Now</option>
+				</select>
+			</div>
+			<div>
 				{experienceMap.get(job)}
 			</div>
 		</div >

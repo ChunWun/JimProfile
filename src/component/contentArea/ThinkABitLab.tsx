@@ -6,7 +6,7 @@ import CV from '../../assets/text/CV.json';
 import ThinkABitLab2 from "./ThinkABitLab2";
 
 
-const useStyles = makeStyles( {
+const useStyles = makeStyles({
 
 	center: {
 		display: 'flex',
@@ -55,7 +55,7 @@ const useStyles = makeStyles( {
 		verticalAlign: 'bottom',
 		float: 'left',
 	},
-} )
+})
 
 const ThinkABitLab: FC = () => {
 
@@ -77,7 +77,7 @@ const ThinkABitLab: FC = () => {
 	}
 
 	return (
-		<div>
+		<React.Fragment>
 			<div className={styles.center}>
 				<img className={styles.img_thinkabit} src={imageThinkaBit.url} alt='think a bit'></img>
 				<p> 2017.01 - 2019.01 </p>
@@ -131,7 +131,7 @@ const ThinkABitLab: FC = () => {
 				<ThinkABitLab2 />
 			</div>
 
-		</div >
+		</React.Fragment >
 
 	)
 }

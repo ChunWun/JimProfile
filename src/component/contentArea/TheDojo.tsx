@@ -80,7 +80,7 @@ const TheDojo: FC = () => {
                     />
                     <Avatar
                         alt="webpack"
-                        src="./assets/image/test.png"
+                        src="./assets/image/webpack.png"
                         sx={{ width: 40, height: 40 }}
                         variant="square"
                     />
