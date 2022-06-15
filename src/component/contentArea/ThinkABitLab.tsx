@@ -6,7 +6,7 @@ import CV from '../../assets/text/CV.json';
 import ThinkABitLab2 from "./ThinkABitLab2";
 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles( {
 
 	center: {
 		display: 'flex',
@@ -55,7 +55,7 @@ const useStyles = makeStyles({
 		verticalAlign: 'bottom',
 		float: 'left',
 	},
-})
+} )
 
 const ThinkABitLab: FC = () => {
 
@@ -127,9 +127,9 @@ const ThinkABitLab: FC = () => {
 
 
 			</div>
-			<div>
+			<React.Fragment>
 				<ThinkABitLab2 />
-			</div>
+			</React.Fragment>
 
 		</React.Fragment >
 
