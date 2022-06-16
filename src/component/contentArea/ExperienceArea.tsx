@@ -1,13 +1,9 @@
-import Box from '@mui/material/Box';
+import { Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
-import Slider from '@mui/material/Slider';
-import React, { FC } from "react";
-import Ep2017 from "./Ep2017";
-import Ep2018 from "./Ep2018";
-import Ep2019 from "./Ep2019";
-import Ep2020 from "./Ep2020";
-import Ep2021 from "./Ep2021";
-import Ep2022 from "./Ep2022";
+import React, { FC, useState } from "react";
+import Now from "./Now";
+import TheDojo from "./TheDojo";
+import ThinkABitLab from "./ThinkABitLab";
 
 
 export interface IExperienceImage {
@@ -15,40 +11,46 @@ export interface IExperienceImage {
 	url: string
 }
 
-const YearMarks: Array<{ value: number, label: string }> = [
-	{
-		value: 2017,
-		label: '2017',
-	},
-	{
-		value: 2018,
-		label: '2018',
-	},
-	{
-		value: 2019,
-		label: '2019',
-	},
-	{
-		value: 2020,
-		label: '2020',
-	},
-	{
-		value: 2021,
-		label: '2021',
-	},
-	{
-		value: 2022,
-		label: '2022',
-	},
-];
+// const YearMarks: Array<{ value: number, label: string }> = [
+// 	{
+// 		value: 2017,
+// 		label: '2017',
+// 	},
+// 	{
+// 		value: 2018,
+// 		label: '2018',
+// 	},
+// 	{
+// 		value: 2019,
+// 		label: '2019',
+// 	},
+// 	{
+// 		value: 2020,
+// 		label: '2020',
+// 	},
+// 	{
+// 		value: 2021,
+// 		label: '2021',
+// 	},
+// 	{
+// 		value: 2022,
+// 		label: '2022',
+// 	},
+// ];
 
-const yearsMap: Map<number, JSX.Element> = new Map<number, JSX.Element>( [
-	[ 2017, <Ep2017 key={2017} /> ],
-	[ 2018, <Ep2018 key={2018} /> ],
-	[ 2019, <Ep2019 key={2019} /> ],
-	[ 2020, <Ep2020 key={2020} /> ],
-	[ 2021, <Ep2021 key={2021} /> ],
-	[ 2022, <Ep2022 key={2022} /> ],
+// const yearsMap: Map<number, JSX.Element> = new Map<number, JSX.Element>([
+// 	[2017, <ThinkABitLab key={2017} />],
+// 	[2018, <ThinkABitLab2 key={2018} />],
+// 	[2019, <TheDojo key={2019} />],
+// 	[2020, <Ep2020 key={2020} />],
+// 	[2021, <Ep2021 key={2021} />],
+// 	[2022, <Ep2022 key={2022} />],
+// ])
+
+const experienceMap: Map<string, JSX.Element> = new Map<string, JSX.Element>( [
+	[ 'ThinkABit', <ThinkABitLab key={0} /> ],
+	[ 'TheDojo', <TheDojo key={1} /> ],
+	[ 'Now', <Now key={2} /> ]
 ] )
 
 const useStyles = makeStyles( {
@@ -82,7 +84,7 @@ const useStyles = makeStyles( {
 		color: '#000000d9',
 		fontFamily: '-webkit-pictograph'
 	},
-	content: {
+	jobButton: {
 		margin: '10px',
 		fontSize: '18px',
 		color: '#00000099',
@@ -90,7 +92,27 @@ const useStyles = makeStyles( {
 		whiteSpace: 'pre-line',
 		lineHeight: '2',
 		justifyContent: 'center',
-		display: 'flex'
+		display: 'flex',
+		'@media  (max-width:620px)': {
+			display: 'none',
+		}
+	},
+	selectDiv: {
+		display: 'flex',
+		justifyContent: 'center'
+	},
+	jobSelect: {
+		display: 'none',
+		'@media  (max-width:620px)': {
+			fontSize: '20px',
+			color: '#00000099',
+			fontFamily: 'monospace',
+			display: 'flex',
+			margin: '10px',
+			lineHeight: '2',
+			textAlign: 'center',
+			justifyContent: 'center'
+		}
 	},
 	sliderBox: {
 		width: '100%',
@@ -103,47 +125,47 @@ const useStyles = makeStyles( {
 
 const ExperienceArea: FC = () => {
 	const styles = useStyles();
-	const defaultValueYear = 2017;
-	const [ value, setValue ] = React.useState<number>( defaultValueYear );
+	const [ job, setExperience ] = useState( 'ThinkABit' );
 
-	const onChangeYear = ( event: Event, newValue: number | number[] ) => {
-		if ( typeof newValue === 'number' ) {
-			setValue( newValue );
-		}
+	// const onChangeYear = (event: Event, newValue: number | number[]) => {
+	// 	if (typeof newValue === 'number') {
+	// 		setExperience(newValue);
+	// 	}
+	// };
+
+	// function valuetext(value: number): string {
+	// 	return `${value} year`;
+	// }
+
+	const onSelectJob = ( event: React.ChangeEvent<HTMLSelectElement> ) => {
+		setExperience( event.target.value );
 	};
 
-	function valuetext ( value: number ): string {
-		return `${ value } year`;
+	const onSelectJobHandler = ( event: any ) => {
+		setExperience( event.target.id );
 	}
 
 	return (
-
 		<div className={styles.area}>
 			<span className={styles.title}>
 				My Experience
 			</span>
-			<p className={styles.content}>
-				(switch time)
-			</p>
-			<div>
-				<Box className={styles.sliderBox}>
-					<Slider
-						aria-label="Year"
-						defaultValue={defaultValueYear}
-						getAriaValueText={valuetext}
-						valueLabelDisplay="auto"
-						step={1}
-						marks={YearMarks}
-						color="primary"
-						onChange={onChangeYear}
-						min={2017}
-						max={2022}
-					/>
-				</Box>
+			<div className={styles.jobButton}>
+				<Button id="ThinkABit" onClick={onSelectJobHandler} >Think a Bit Lab</Button>
+				<Button id="TheDojo" onClick={onSelectJobHandler} >The Dojo</Button>
+				{/* <Button id="Now" onClick={onSelectJobHandler} >Now</Button> */}
 
 			</div>
-			<div >
-				{yearsMap.get( value )}
+
+			<div className={styles.selectDiv}>
+				<select className={styles.jobSelect} name="selectJob" onChange={onSelectJob} value={job}>
+					<option value={'ThinkABit'}>Think a Bit Lab</option>
+					<option value={'TheDojo'}>The Dojo</option>
+					{/* <option value={'Now'}>Now</option> */}
+				</select>
+			</div>
+			<div>
+				{experienceMap.get( job )}
 			</div>
 		</div >
 
