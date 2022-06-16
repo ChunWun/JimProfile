@@ -95,6 +95,26 @@ const TheDojo: FC = () => {
 					<li>Use API and websocket connection with back-end developer to build features.</li>
 					<li>Experience in maintaining Back-Office with React.js.</li>
 				</p>
+				<Stack direction="row" spacing={2} margin="10px">
+					<Avatar
+						alt="pixi"
+						src="./assets/image/skillBlock/Pixi_logo.png"
+						sx={{ width: 40, height: 40 }}
+						variant="square"
+					/>
+					<Avatar
+						alt="typescript"
+						src="./assets/image/skillBlock/TS_logo.png"
+						sx={{ width: 40, height: 40 }}
+						variant="square"
+					/>
+					<Avatar
+						alt="webpack"
+						src="./assets/image/webpack.png"
+						sx={{ width: 40, height: 40 }}
+						variant="square"
+					/>
+				</Stack>
 			</div>
 		</div >
 	)

@@ -47,13 +47,13 @@ export interface IExperienceImage {
 // 	[2022, <Ep2022 key={2022} />],
 // ])
 
-const experienceMap: Map<string, JSX.Element> = new Map<string, JSX.Element>([
-	['ThinkABit', <ThinkABitLab key={0} />],
-	['TheDojo', <TheDojo key={1} />],
-	['Now', <Now key={2} />]
-])
+const experienceMap: Map<string, JSX.Element> = new Map<string, JSX.Element>( [
+	[ 'ThinkABit', <ThinkABitLab key={0} /> ],
+	[ 'TheDojo', <TheDojo key={1} /> ],
+	[ 'Now', <Now key={2} /> ]
+] )
 
-const useStyles = makeStyles({
+const useStyles = makeStyles( {
 	area: {
 		margin: '10px',
 		font: 'inherit',
@@ -125,7 +125,7 @@ const useStyles = makeStyles({
 
 const ExperienceArea: FC = () => {
 	const styles = useStyles();
-	const [job, setExperience] = useState('ThinkABit');
+	const [ job, setExperience ] = useState( 'ThinkABit' );
 
 	// const onChangeYear = (event: Event, newValue: number | number[]) => {
 	// 	if (typeof newValue === 'number') {
@@ -137,12 +137,12 @@ const ExperienceArea: FC = () => {
 	// 	return `${value} year`;
 	// }
 
-	const onSelectJob = (event: React.ChangeEvent<HTMLSelectElement>) => {
-		setExperience(event.target.value);
+	const onSelectJob = ( event: React.ChangeEvent<HTMLSelectElement> ) => {
+		setExperience( event.target.value );
 	};
 
-	const onSelectJobHandler = (event: any) => {
-		setExperience(event.target.id);
+	const onSelectJobHandler = ( event: any ) => {
+		setExperience( event.target.id );
 	}
 
 	return (
@@ -153,7 +153,7 @@ const ExperienceArea: FC = () => {
 			<div className={styles.jobButton}>
 				<Button id="ThinkABit" onClick={onSelectJobHandler} >Think a Bit Lab</Button>
 				<Button id="TheDojo" onClick={onSelectJobHandler} >The Dojo</Button>
-				<Button id="Now" onClick={onSelectJobHandler} >Now</Button>
+				{/* <Button id="Now" onClick={onSelectJobHandler} >Now</Button> */}
 
 			</div>
 
@@ -161,11 +161,11 @@ const ExperienceArea: FC = () => {
 				<select className={styles.jobSelect} name="selectJob" onChange={onSelectJob} value={job}>
 					<option value={'ThinkABit'}>Think a Bit Lab</option>
 					<option value={'TheDojo'}>The Dojo</option>
-					<option value={'Now'}>Now</option>
+					{/* <option value={'Now'}>Now</option> */}
 				</select>
 			</div>
 			<div>
-				{experienceMap.get(job)}
+				{experienceMap.get( job )}
 			</div>
 		</div >
 
