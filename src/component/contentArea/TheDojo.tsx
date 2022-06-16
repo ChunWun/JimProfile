@@ -12,25 +12,12 @@ const useStyles = makeStyles( {
 		flexDirection: 'column',
 		margin: '5px'
 	},
-
 	img_dojo: {
 		width: 'auto',
 		height: 'auto',
 		maxHeight: '90px',
 		maxWidth: '160px',
 		margin: '0px'
-	},
-	card: {
-		width: '100%',
-		display: 'flex',
-		flex: 'auto',
-		justifyContent: 'space-evenly'
-	},
-	cardContent: {
-		height: '90px',
-		width: '100%',
-		display: 'flex',
-		flex: 'auto',
 	},
 	content: {
 		width: '95%',
@@ -44,19 +31,73 @@ const useStyles = makeStyles( {
 		verticalAlign: 'bottom',
 		float: 'left',
 	},
+	slotImageDiv: {
+		'@media  (max-width:780px)': {
+			display: 'none',
+		}
+	},
+	slotImageDiv2: {
+		display: 'none',
+		'@media  (max-width:780px)': {
+			margin: '5px',
+			display: 'grid',
+			justifyContent: 'space-around',
+			alignContent: 'space-evenly',
+			justifyItems: 'center',
+			alignItems: 'stretch'
+		},
+	},
+	slotImageDiv3: {
+		'@media  (max-width:560px)': {
+			margin: '5px',
+			display: 'grid',
+			justifyContent: 'space-around',
+			alignContent: 'space-evenly',
+			justifyItems: 'center',
+			alignItems: 'stretch'
+		}
+	},
+	slotImage: {
+		width: 'auto',
+		height: 'auto',
+		maxHeight: '150px',
+		maxWidth: '250px',
+		margin: '5px'
+	}
 } )
 
 const TheDojo: FC = () => {
 
 	const styles = useStyles();
 
+
 	const imageDOJO: IExperienceImage = {
 		title: 'dojo',
 		url: './assets/image/Dojo.jpg'
 	}
 
+	const imageStormRider: IExperienceImage = {
+		title: 'StormRider',
+		url: './assets/image/stormRider.png'
+	}
+
+	const imageRavingWild: IExperienceImage = {
+		title: 'RavingWild',
+		url: './assets/image/RavingWild.png'
+	}
+
+	const imageSlot1: IExperienceImage = {
+		title: 'slot1',
+		url: './assets/image/slot1.png'
+	}
+
+	const imageSlot2: IExperienceImage = {
+		title: 'slot2',
+		url: './assets/image/slot2.png'
+	}
+
 	return (
-		<div>
+		<React.Fragment>
 			<div className={styles.center}>
 				<img className={styles.img_dojo} src={imageDOJO.url} alt='theDojo'></img>
 				<p> 2019.09 - 2022.03 </p>
@@ -64,6 +105,7 @@ const TheDojo: FC = () => {
 					{CV.the_dojo_exp}
 				</p>
 			</div>
+
 			<div className={styles.center}>
 				<Stack direction="row" spacing={2} margin="10px">
 					<Avatar
@@ -95,28 +137,28 @@ const TheDojo: FC = () => {
 					<li>Use API and websocket connection with back-end developer to build features.</li>
 					<li>Experience in maintaining Back-Office with React.js.</li>
 				</p>
-				<Stack direction="row" spacing={2} margin="10px">
-					<Avatar
-						alt="pixi"
-						src="./assets/image/skillBlock/Pixi_logo.png"
-						sx={{ width: 40, height: 40 }}
-						variant="square"
-					/>
-					<Avatar
-						alt="typescript"
-						src="./assets/image/skillBlock/TS_logo.png"
-						sx={{ width: 40, height: 40 }}
-						variant="square"
-					/>
-					<Avatar
-						alt="webpack"
-						src="./assets/image/webpack.png"
-						sx={{ width: 40, height: 40 }}
-						variant="square"
-					/>
-				</Stack>
+				<div className={styles.slotImageDiv}>
+					<Stack direction="row" spacing={2} margin="10px" >
+						<img className={styles.slotImage} src={imageStormRider.url} alt='stormRider'></img>
+						<img className={styles.slotImage} src={imageRavingWild.url} alt='raving'></img>
+						<img className={styles.slotImage} src={imageSlot1.url} alt='slot1'></img>
+						<img className={styles.slotImage} src={imageSlot2.url} alt='slot2'></img>
+					</Stack>
+				</div>
+
+				<div className={styles.slotImageDiv2}>
+					<div className={styles.slotImageDiv3}>
+						<img className={styles.slotImage} src={imageStormRider.url} alt='stormRider'></img>
+						<img className={styles.slotImage} src={imageRavingWild.url} alt='raving'></img>
+					</div>
+					<div className={styles.slotImageDiv3}>
+						<img className={styles.slotImage} src={imageSlot1.url} alt='slot1'></img>
+						<img className={styles.slotImage} src={imageSlot2.url} alt='slot2'></img>
+					</div>
+				</div>
 			</div>
-		</div >
+
+		</React.Fragment >
 	)
 }
 
