@@ -7,7 +7,7 @@ import TopBlock from './component/topBlock/TopBlock';
 import './css/style.scss'
 
 
-const useStyles = makeStyles( {
+const useStyles = makeStyles({
 	linkWrapper: {
 		display: 'flex',
 		justifyContent: 'center'
@@ -49,14 +49,14 @@ const App: FC = () => {
 		<React.Fragment>
 			<div className={styles.linkWrapper}>
 				<div className={styles.link}>
-					<ContactBlock />
+					{/* <ContactBlock /> */}
 				</div>
 			</div>
 
 			<div className={styles.wrapper}>
 				<div className={styles.paper}>
-					<TopBlock />
-					<SkillBlockV3 />
+					{/* <TopBlock />
+					<SkillBlockV3 /> */}
 					<ExperienceArea />
 				</div>
 			</div>
