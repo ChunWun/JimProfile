@@ -1,18 +1,13 @@
 import React, { FC } from "react"
 import { makeStyles } from "@material-ui/styles";
 import { Box } from "@material-ui/system";
-import CV from '../../assets/text/CV.json';
+import CV from '../assets/text/CV.json';
 
-interface IItemBox {
-	title: string;
-	iconUrl: string;
-	content: string;
-}
 
 const useStyles = makeStyles( {
 	block: {
 		width: '95%',
-		height: '215px',
+		height: 'auto',
 		font: 'inherit',
 		padding: '10px 20px 10px 20px',
 		display: 'inline-flex',
@@ -85,6 +80,12 @@ const useStyles = makeStyles( {
 }
 );
 
+interface IItemBox {
+	title: string;
+	iconUrl: string;
+	content: string;
+}
+
 const ItemBox: FC<IItemBox> = ( props: IItemBox ) => {
 	const styles = useStyles();
 	return (
@@ -97,8 +98,7 @@ const ItemBox: FC<IItemBox> = ( props: IItemBox ) => {
 	);
 }
 
-//TODO fix relative path problem
-const SkillBlockV3: FC = () => {
+const HOC: FC = () => {
 	const styles = useStyles();
 	const itemTypeScript: IItemBox = {
 		title: 'TypeScripts',
@@ -118,33 +118,17 @@ const SkillBlockV3: FC = () => {
 		content: CV.skill_Pixi
 	}
 
-	const itemReact: IItemBox = {
-		title: 'React',
-		iconUrl: './assets/image/skillBlock/React_logo.png',
-		content: CV.skill_React
-	}
-
-	const itemHtml: IItemBox = {
-		title: 'PixiJs',
-		iconUrl: './assets/image/skillBlock/HTML_logo.png',
-		content: CV.skill_Html
-	}
 
 	return (
 		<Box className={styles.block}>
-			<div className={styles.leftBlock}>
+			<div >
 				<ItemBox {...itemTypeScript} />
 				<ItemBox {...itemJavaScript} />
 				<ItemBox {...itemPixiJs} />
-			</div>
-			<div className={styles.breakLine}></div>
-			<div className={styles.rightBlock}>
-				<ItemBox {...itemReact} />
-				<ItemBox {...itemHtml} />
 			</div>
 		</Box >
 	);
 }
 
 
-export default SkillBlockV3;
+export default HOC;
